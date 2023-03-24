@@ -28,7 +28,62 @@
     nav { color: greenyellow;}
     form { color: greenyellow;}
     .a { color: greenyellow;}
+section {
+  margin: 40px 0;
+}
 
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+section ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+section li {
+  margin: 1rem;
+}
+
+section figure {
+  margin: 0;
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+section figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 0.5rem;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+section figure:hover img {
+  transform: scale(1.2);
+}
+
+section figure:hover figcaption {
+  opacity: 1;
+}
   </style>
 </head>
 <nav class="navbar bg-body-tertiary fixed-top" data-bs-theme="dark">
@@ -50,27 +105,12 @@
             <li class="nav-item">
               <a class="nav-link" href="contactme.html">Contact Me</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
+           
+            
           </ul>
-          <form class="d-flex mt-3" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+           
+            <a class="btn btn-outline-success" href="#">Download Resume</a>
+         
         </div>
       </div>
     </div>
@@ -79,11 +119,48 @@
     <br>
      <br><br><center><h1>Hi I am Vishnu K M</h1><br>
     <h3> A Programmer</h3></center>
-   
+ <section id="about">
+			<h2>About Me</h2>
+			<p>Hi, my name is [Your Name], and I am a Full Stack Web Developer with expertise in Django framework. I have [Number of Years] years of experience building web applications from scratch and developing robust and scalable back-end architectures. I am proficient in HTML, CSS, JavaScript, Python, and other relevant web development technologies.</p>
+		</section>
+  
+<section id="skills">
+			<h2>Skills</h2>
+			<ul>
+				<li>Django Framework</li>
+				<li>HTML/CSS</li>
+				<li>JavaScript</li>
+				<li>Python</li>
+				<li>Django REST framework</li>
+				<li>SQL/NoSQL Databases</li>
+				<li>Git Version Control</li>
+			</ul>
+		</section>
 
 
-
-
+		<section id="projects">
+			<h2>Projects</h2>
+			<ul>
+				<li>
+					<h3>Project 1: [Project Name]</h3>
+					<p>[Project Description]</p>
+					<p>Technologies Used: [Technologies]</p>
+					<p><a href="[Link to Project]">View Project</a></p>
+				</li>
+				<li>
+					<h3>Project 2: [Project Name]</h3>
+					<p>[Project Description]</p>
+					<p>Technologies Used: [Technologies]</p>
+					<p><a href="[Link to Project]">View Project</a></p>
+				</li>
+				<li>
+					<h3>Project 3: [Project Name]</h3>
+					<p>[Project Description]</p>
+					<p>Technologies Used: [Technologies]</p>
+					<p><a href="[Link to Project]">View Project</a></p>
+				</li>
+			</ul>
+		</section>
 
 
 
