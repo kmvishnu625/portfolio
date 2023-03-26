@@ -89,6 +89,81 @@ section figure:hover figcaption {
   border-radius: 50%;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #000;
+}
+.middle {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.bar {
+  width: 10px;
+  height: 70px;
+  background: #fff;
+  display: inline-block;
+  transform-origin: bottom center;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  /*   box-shadow:5px 10px 20px inset rgba(255,23,25.2); */
+  animation: loader 1.2s linear infinite;
+}
+.bar1 {
+  animation-delay: 0.1s;
+}
+.bar2 {
+  animation-delay: 0.2s;
+}
+.bar3 {
+  animation-delay: 0.3s;
+}
+.bar4 {
+  animation-delay: 0.4s;
+}
+.bar5 {
+  animation-delay: 0.5s;
+}
+.bar6 {
+  animation-delay: 0.6s;
+}
+.bar7 {
+  animation-delay: 0.7s;
+}
+.bar8 {
+  animation-delay: 0.8s;
+}
+
+@keyframes loader {
+  0% {
+    transform: scaleY(0.1);
+    
+  }
+  50% {
+    transform: scaleY(1);
+    background: yellowgreen;
+  }
+  100% {
+    transform: scaleY(0.1);
+    background: transparent;
+  }
+}
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
+.grid-item {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
 
 
   </style>
@@ -123,9 +198,39 @@ section figure:hover figcaption {
     </div>
   </nav>
 <body data-bs-theme="dark"  >
+  
     <br>
      <br><br><center><h1>Hi I am Vishnu K M</h1><br>
-      <img src="1.jpg" alt="profile" height="180" width="150" id="profilephoto">
+
+      <div class="grid-container">
+        <div class="grid-item"><div class="middle">
+          <div class="bar bar1"></div>
+          <div class="bar bar2"></div>
+          <div class="bar bar3"></div>
+          <div class="bar bar4"></div>
+          <div class="bar bar5"></div>
+          <div class="bar bar6"></div>
+          <div class="bar bar7"></div>
+          <div class="bar bar8"></div>
+        </div></div>
+        <div class="grid-item"><img src="1.jpg" alt="profile" height="180" width="150" id="profilephoto"></div>
+        <div class="grid-item"><div class="middle">
+          <div class="bar bar1"></div>
+          <div class="bar bar2"></div>
+          <div class="bar bar3"></div>
+          <div class="bar bar4"></div>
+          <div class="bar bar5"></div>
+          <div class="bar bar6"></div>
+          <div class="bar bar7"></div>
+          <div class="bar bar8"></div>
+        </div></div>  
+         
+      </div>
+     
+
+
+
+      
     <h3> A Programmer</h3></center>
  <section id="about" >
 			<h2>About Me</h2>
@@ -190,5 +295,15 @@ section figure:hover figcaption {
     </footer>
 </body>
 </html>
-
+<script>
+  window.onload = function(){
+    
+      //time is set in milliseconds
+      setTimeout(preloader, 4000)
+  };
+  function preloader()
+  {
+    console.log("hi");
+  }
+</script>
 
