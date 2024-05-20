@@ -1,10 +1,11 @@
+Here's the whole code after the modification to ensure that the project images always display at 250x150 pixels:
 
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Vishnu K M - Full Stack Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
@@ -214,9 +215,11 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
-        .project-grid img {
-            max-width: 100%;
-            height: auto;
+        /* New styles to ensure project images are always 250x150 pixels */
+        .project-item img {
+            width: 250px;
+            height: 150px;
+            object-fit: cover;
         }
         /* New Styles for References Section */
         .references {
@@ -498,3 +501,6 @@
     </script>
 </body>
 </html>
+```
+
+This code now includes the `.project-item img` CSS rule to ensure that the project images always display at 250x150 pixels.
