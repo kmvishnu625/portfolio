@@ -1,309 +1,499 @@
-<!DOCTYPE html >
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-    <symbol id="bootstrap" viewBox="0 0 118 94">
-      <title>Bootstrap</title>
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
-    </symbol>
-    <symbol id="facebook" viewBox="0 0 16 16">
-      <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
-    </symbol>
-    <symbol id="instagram" viewBox="0 0 16 16">
-        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
-    </symbol>
-    <symbol id="twitter" viewBox="0 0 16 16">
-      <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
-    </symbol>
-  </svg>
-    <title>Vishnu K M</title>
-  <style>
-    div *{color:greenyellow;}
-    body *{color: greenyellow;}
-    nav { color: greenyellow;}
-    form { color: greenyellow;}
-    .a { color: greenyellow;}
-section {
-  margin: 40px 0;
-}
+    <title>Vishnu K M - Full Stack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .container {
+            max-width: 1100px; /* Updated max-width to accommodate new sections */
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #111;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #ffc107;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+        .contact-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .contact-info a {
+            margin: 0 15px;
+            font-size: 1.5em;
+            color: #ffc107;
+            transition: all 0.3s ease;
+        }
+        .contact-info a:hover {
+            transform: scale(1.2);
+        }
+        .section-heading {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #ffc107;
+            text-align: center;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        .skills-list li {
+            padding: 8px 12px;
+            background-color: #ffc107;
+            color: #000;
+            border-radius: 5px;
+        }
+        .experience-item {
+            margin-bottom: 30px;
+            border-left: 3px solid #ffc107;
+            padding-left: 10px;
+        }
+        .experience-item h3 {
+            color: #ffc107;
+            margin-bottom: 10px;
+        }
+        .experience-item p {
+            color: #ddd;
+            margin-bottom: 10px;
+        }
+        .experience-item ul {
+            list-style-type:
+```
+ disc;
+            margin-left: 20px;
+            color: #ddd;
+        }
+        .project-item {
+            margin-bottom: 30px;
+            border-left: 3px solid #ffc107;
+            padding-left: 10px;
+        }
+        .project-item h3 {
+            color: #ffc107;
+            margin-bottom: 10px;
+        }
+        .project-item ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            color: #ddd;
+        }
+        /* New Styles for Personal Information Section */
+        .personal-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .personal-info h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #ffc107;
+        }
+        .personal-info p {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            color: #ddd;
+        }
+        /* New Styles for Languages Section */
+        .languages {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .languages h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #ffc107;
+        }
+        .languages-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .languages-list li {
+            padding: 5px 10px;
+            background-color: #ffc107;
+            color: #000;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        /* New Styles for Education Section */
+        .education {
+            margin-bottom: 20px;
+        }
+        .education h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #ffc107;
+            text-align: center;
+        }
+        .education-item {
+            margin-bottom: 20px;
+            border-left: 3px solid #ffc107;
+            padding-left: 10px;
+            text-align: left;
+        }
+        .education-item h3 {
+            color: #ffc107;
+            margin-bottom: 5px;
+        }
+        .education-item p {
+            color: #ddd;
+            margin-bottom: 5px;
+        }
+        /* New Styles for Certifications Section */
+        .certifications {
+            margin-bottom: 20px;
+        }
+        .certifications h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #ffc107;
+            text-align: center;
+        }
+        .certification-item {
+            margin-bottom: 20px;
+            border-left: 3px solid #ffc107;
+            padding-left: 10px;
+            text-align: left;
+        }
+        .certification-item h3 {
+            color: #ffc107;
+            margin-bottom: 5px;
+        }
+        .certification-item p {
+            color: #ddd;
+            margin-bottom: 5px;
+        }
+        /* New Styles for Projects Section */
+        .projects {
+            margin-bottom: 20px;
+        }
+        .projects h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #ffc107;
+            text-align: center;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .project-grid img {
+            max-width: 100%;
+            height: auto;
+        }
+        /* New Styles for References Section */
+        .references {
+            text-align: center;
+            margin-top: 30px;
+            color: #ddd;
+        }
+        .references h2
+```
+ {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #ffc107;
+        }
+        .reference-item {
+            margin-bottom: 20px;
+        }
+        .reference-item h3 {
+            color: #ffc107;
+            margin-bottom: 5px;
+        }
+        .reference-item p {
+            color: #ddd;
+            margin-bottom: 5px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #ddd;
+        }
 
-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  text-align: center;
-  text-transform: uppercase;
-}
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-timing-function: ease-in-out;
+            animation-name: fadeInUp;
+        }
 
-section ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-section li {
-  margin: 1rem;
-}
-
-section figure {
-  margin: 0;
-  width: 250px;
-  height: 250px;
-  overflow: hidden;
-  position: relative;
-}
-
-section img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s;
-}
-
-section figcaption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  padding: 0.5rem;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-
-section figure:hover img {
-  transform: scale(1.2);
-}
-
-section figure:hover figcaption {
-  opacity: 1;
-}
-
-#profilephoto {
-  border-radius: 50%;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background: #000;
-}
-.middle {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-}
-.bar {
-  width: 10px;
-  height: 70px;
-  background: #fff;
-  display: inline-block;
-  transform-origin: bottom center;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-  /*   box-shadow:5px 10px 20px inset rgba(255,23,25.2); */
-  animation: loader 1.2s linear infinite;
-}
-.bar1 {
-  animation-delay: 0.1s;
-}
-.bar2 {
-  animation-delay: 0.2s;
-}
-.bar3 {
-  animation-delay: 0.3s;
-}
-.bar4 {
-  animation-delay: 0.4s;
-}
-.bar5 {
-  animation-delay: 0.5s;
-}
-.bar6 {
-  animation-delay: 0.6s;
-}
-.bar7 {
-  animation-delay: 0.7s;
-}
-.bar8 {
-  animation-delay: 0.8s;
-}
-
-@keyframes loader {
-  0% {
-    transform: scaleY(0.1);
-    
-  }
-  50% {
-    transform: scaleY(1);
-    background: yellowgreen;
-  }
-  100% {
-    transform: scaleY(0.1);
-    background: transparent;
-  }
-}
-.grid-container {
-  display: inline-grid;
-  grid-template-columns: auto auto auto;
-  padding: 10px;
-}
-
-.grid-item {
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
-}
-
-
-
-  </style>
+        /* Media Queries for Responsiveness */
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+            header p {
+                font-size: 1.1em;
+            }
+            .contact-info a {
+                font-size: 1.3em;
+            }
+            .section-heading {
+                font-size: 1.6em;
+            }
+            .experience-item p,
+            .project-item li {
+                font-size: 0.9em;
+            }
+            /* New Media Queries for Personal Information Section */
+            .personal-info p {
+                font-size: 1em;
+            }
+            /* New Media Queries for Languages Section */
+            .languages-list li {
+                font-size: 0.9em;
+            }
+            /* New Media Queries for Education Section */
+            .education-item p {
+                font-size: 0.9em;
+            }
+            /* New Media Queries for Certifications Section */
+            .certification-item p {
+                font-size: 0.9em;
+            }
+            /* New Media Queries for Projects Section */
+            .project-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+            /* New Media Queries for References Section */
+            .reference-item p {
+                font-size: 0.9em;
+            }
+        }
+    </style>
 </head>
-<nav class="navbar bg-body-tertiary fixed-top" data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">😎😎</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<body>
+    <div class="container animated animated">
+        <header>
+            <h1>Vishnu K M</h1>
+            <p>Full Stack Developer | Computer Applications Graduate</p>
+        </header>
+        <div class="contact-info">
+            <a href="tel:+917907847751"><i class="fas fa-phone"></i></a>
+            <a href="mailto:vishnu@example.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/vishnu-k-m" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/your-username" target="_blank"><i class="fab fa-github"></i></a>
         </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contactme.html">Contact Me</a>
-            </li>
-           
-            
-          </ul>
-           
-            <a class="btn btn-outline-success" href="Resume.pdf">Download Resume</a>
-         
-        </div>
-      </div>
+        <!-- New Section for Personal Information -->
+        <section class="personal-info">
+            <h2 class="section-heading">Personal Information</h2>
+            <p>Full Name: Vishnu K M</p>
+            <p>Gender: Male</p>
+            <p>Date of Birth: June 18, 2000</p>
+            <p>Marital Status: Single</p>
+            <p>Occupation: Fresh Graduate</p>
+        </section>
+        <!-- New Section for Languages -->
+        <section class="languages">
+            <h2 class="section-heading">Languages</h2>
+            <ul class="languages-list">
+                <li>English</li>
+                <li>Hindi
+```
+<li>Malayalam</li>
+            </ul>
+        </section>
+        <section>
+            <h2 class="section-heading">About Me</h2>
+            <p>As a motivated and adaptable Computer Applications graduate, I am eager to explore diverse roles and embrace new challenges within a professional environment. With a strong foundation in programming languages, frameworks, and database management, I am open to learning new skills and technologies to enhance my capabilities. My goal is to contribute effectively to projects, collaborate seamlessly with teams, and continuously grow both personally and professionally to deliver innovative solutions and make a meaningful impact.</p>
+        </section>
+        <section>
+            <h2 class="section-heading">Skills</h2>
+            <ul class="skills-list">
+                <li>Python</li>
+                <li>JavaScript</li>
+                <li>C++</li>
+                <li>C</li>
+                <li>Java</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>jQuery</li>
+                <li>Django</li>
+                <li>Django REST Framework</li>
+                <li>Bootstrap</li>
+                <li>MySQL</li>
+                <li>Git</li>
+                <li>Linux (Ubuntu)</li>
+                    <li>Windows</li>
+                    <li>MS Office Suite</li>
+                    <li>HTML5</li> <!-- New Skill -->
+                    <li>Java Script</li> <!-- New Skill -->
+                </ul>
+            </section>
+            <section>
+                <h2 class="section-heading">Experience</h2>
+                <div class="experience-item">
+                    <h3>Python Full Stack Developer (Internship)</h3>
+                    <p><strong>Business Technology Research & Analytics Centre, Kannur</strong> | 29/11/2021 – 08/04/2022</p>
+                        <ul>
+                            <li>Collaborated with a team to develop and maintain web applications using Python, Django, and Django REST Framework.</li>
+                            <li>Designed and implemented RESTful APIs for data management and integration.</li>
+                            <li>Performed testing, debugging, and code optimization to enhance application performance.</li>
+                            <li>Contributed to project planning, task estimation, and code reviews.</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <h3>Software Engineer (3-month Probation)</h3>
+                        <p><strong>Change Payments, Kannur (Remote)</strong> | Jul 2022 - Sep 2022</p>
+                            <ul>
+                                <li>Worked as a Project Intern during a 3-month probation period.</li>
+                                <li>Gained exposure to the company's development processes and technologies.</li>
+                                <li>Left the role to pursue higher education.</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <!-- New Section for Education -->
+                    <section class="education">
+                        <h2 class="section-heading">Education</h2>
+                        <div class="education-item">
+                            <h3>Master of Computer Application (MCA),2022- Pursuing</h3>
+                            <p><strong>Kannur University</strong></p>
+                            <p>CGPA: 8.117 /10 (up to current semester)</p>
+                        </div>
+                        <div class="education-item">
+                            <h3>Bachelor of Computer Application (BCA), 2018 - 2021</h3>
+                            <p><strong>Indira Gandhi National Open University</strong></p>
+                            <p>Percentage: 65.0%</p>
+                        </div>
+                    </section>
+                    <!-- New Section for Certifications -->
+                    <section
+```
+ class="certifications">
+            <h2 class="section-heading">Certifications</h2>
+            <div class="certification-item">
+                <h3>HTML5</h3> <!-- New Certification -->
+                <p>Issued by: [Issuer Name]</p>
+                <p>Issued on: [Issue Date]</p>
+            </div>
+            <div class="certification-item">
+                <h3>Java Script</h3> <!-- New Certification -->
+                <p>Issued by: [Issuer Name]</p>
+                <p>Issued on: [Issue Date]</p>
+            </div>
+        </section>
+        <section>
+            <h2 class="section-heading">Projects</h2>
+            <!-- New Projects Grid -->
+            <div class="project-grid">
+                <a href="#" class="project-item">
+                    <img src="https://via.placeholder.com/250x150" alt="Camera Rental Website">
+                    <h3>Camera Rental Website</h3>
+                    <ul>
+                        <li>Developed a web application using Python, Django, MySQL, and Bootstrap.</li>
+                        <li>Implemented user authentication, listing, and booking features.</li>
+                    </ul>
+                </a>
+                <a href="#" class="project-item">
+                    <img src="https://via.placeholder.com/250x150" alt="Blog Website">
+                    <h3>Blog Website</h3>
+                    <ul>
+                        <li>Created a platform using Python, Django, Bootstrap, and MySQL for users to post pictures and stories.</li>
+                        <li>Included user registration, content creation, commenting, and social sharing functionalities.</li>
+                    </ul>
+                </a>
+                <a href="#" class="project-item">
+                    <img src="https://via.placeholder.com/250x150" alt="User Registration & Management API">
+                    <h3>User Registration & Management API</h3>
+                    <ul>
+                        <li>Designed and developed a RESTful API using Django REST Framework for user account management, authentication, and authorization.</li>
+                    </ul>
+                </a>
+                <a href="#" class="project-item">
+                    <img src="https://via.placeholder.com/250x150" alt="Weapon Detection System">
+                    <h3>Weapon Detection System</h3>
+                    <ul>
+                        <li>Developed a real-time weapon detection system using Python, OpenCV, and machine learning.</li>
+                        <li>Which can be integrated with IP cameras</li>
+                    </ul>
+                </a>
+            </div>
+        </section>
+        <!-- New Section for References -->
+        <section class="references">
+            <h2 class="section-heading">References</h2>
+            <div class="reference-item">
+                <h3>Muhammed Shafi K</h3>
+                <p>HOD, ITEC PALAYAD</p>
+                <p>Phone: +91 79078 47751</p>
+            </div>
+            <div class="reference-item">
+                <h3>Kavya</h3>
+                <p>Chief Operations Officer,</p>
+                <p>Business Technology Research & Analytics Centre</p>
+                <p>Phone: +91 79023 23129</p>
+            </div>
+        </section>
+        <footer>
+            <p>© 2024 Vishnu K M. All Rights Reserved.</p>
+            <p>Connect with me: <a href="https://linkedin.com/in/vishnu-k-m" target="_blank"><i class="fab fa-linkedin"></i></a> <a href="https://github.com/your-username" target="_blank"><i class="fab fa-github"></i></a></p>
+        </footer>
     </div>
-  </nav>
-<body data-bs-theme="dark"  >
-  
-    <br>
-     <br><br><center><h1>Hi I am Vishnu K M</h1><br>
 
-      <div class="grid-container">
-        <div class="grid-item"><div class="middle">
-          <div class="bar bar1"></div>
-          <div class="bar bar2"></div>
-          <div class="bar bar3"></div>
-          <div class="bar bar4"></div>
-          <div class="bar bar5"></div>
-          <div class="bar bar6"></div>
-          <div class="bar bar7"></div>
-          <div class="bar bar8"></div>
-        </div></div>
-        <div class="grid-item"><img src="1.jpg" alt="profile" height="180" width="150" id="profilephoto"></div>
-        <div class="grid-item"><div class="middle">
-          <div class="bar bar1"></div>
-          <div class="bar bar2"></div>
-          <div class="bar bar3"></div>
-          <div class="bar bar4"></div>
-          <div class="bar bar5"></div>
-          <div class="bar bar6"></div>
-          <div class="bar bar7"></div>
-          <div class="bar bar8"></div>
-        </div></div>  
-         
-      </div>
-     
-
-
-
-      
-    <h3> A Programmer</h3></center>
- <section id="about" >
-			<h2>About Me</h2>
-			<p>Hi, my name is Vishnu K M, and I am a Full Stack Web Developer with expertise in Django framework.
-         I have a years of experience building web applications from scratch and developing robust and scalable back-end architectures. 
-         I am proficient in HTML, CSS, JavaScript, Python, and other relevant web development technologies.</p>
-		</section>
-  
-<section id="skills">
-			<h2>Skills</h2>
-			<ul>
-				<li>Django Framework</li>
-				<li>HTML/CSS</li>
-				<li>JavaScript</li>
-				<li>Python</li>
-				<li>Django REST framework</li>
-				<li>SQL/NoSQL Databases</li>
-				<li>Git Version Control</li>
-			</ul>
-		</section>
-
-
-		<section id="projects">
-			<h2>Projects</h2>
-			<ul>
-				<li>
-					<h3>Project 1: Camera Rental</h3>
-					<p>A website whee you could lent or rent cameras</p>
-					<p>Technologies Used:django,html,css,jinja,MySql</p>
-					<p><a href="[Link to Project]">View Project</a></p>
-				</li>
-				<li>
-					<h3>Project 2: Blog</h3>
-					<p>a simple blog to express</p>
-					<p>Technologies Used: django,html,css,jinja,sqlite</p>
-					<p><a href="[Link to Project]">View Project</a></p>
-				</li>
-				<li>
-					<h3>Project 3: User Mangement API</h3>
-					<p>[Project Description]</p>
-					<p>Technologies Used:django,django REST Framework</p>
-					<p><a href="[Link to Project]">View Project</a></p>
-				</li>
-			</ul>
-		</section>
-
-
-
-     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" data-bs-theme="dark">
-      <div class="col-md-4 d-flex align-items-center">
-        <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-          <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-        </a>
-        <span class="mb-3 mb-md-0 text-muted">vishnu km 2022 </span>
-      </div>
-  
-      <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-        <li class="ms-3"><a class="text-muted" href="https://twitter.com/jztchl"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-        <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/jztchl"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-        <li class="ms-3"><a class="text-muted" href="https://www.facebook.com/v.sh.noo"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
-      </ul>
-    </footer>
+    <!-- Font Awesome
+```
+ Icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <!-- Scroll Reveal Animation Library -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        // Initialize ScrollReveal
+        ScrollReveal().reveal('.animated', {
+            delay: 200,
+            duration: 1000,
+            origin: 'bottom',
+            distance: '20px',
+            easing: 'ease-in-out',
+            reset: true
+        });
+    </script>
 </body>
 </html>
-<script>
-  window.onload = function(){
-    
-      //time is set in milliseconds
-      setTimeout(preloader, 4000)
-  };
-  function preloader()
-  {
-    console.log("hi");
-  }
-</script>
-
